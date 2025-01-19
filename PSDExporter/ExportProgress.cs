@@ -34,6 +34,8 @@ namespace PSDExporter
         public string ArtistStr = "";
         public string DescriptionStr = "";
 
+        public bool GrayMode = false;
+        
         public List<string> PSDPath = [];
 
         const string DateTimeFormat = "yyyy:MM:dd HH:mm:ss";
@@ -176,6 +178,9 @@ namespace PSDExporter
                 }
 
                 Trace.Assert(img != null);
+                
+                if (GrayMode == true)
+                    img.Mutate(x => x.Grayscale());
 
                 img.Metadata.ExifProfile = new ExifProfile();
 
@@ -200,7 +205,7 @@ namespace PSDExporter
                 {
                     case 0:
                     {
-                        JpegEncodingColor c = psd.Header.ColorMode switch
+                        JpegEncodingColor c = (GrayMode == true )? JpegEncodingColor.Luminance : psd.Header.ColorMode switch
                         {
                             ColorMode.Grayscale => JpegEncodingColor.Luminance,
                             _ => JpegEncodingColor.YCbCrRatio444
@@ -210,7 +215,7 @@ namespace PSDExporter
                     }
                     case 1:
                     {
-                        PngColorType c = psd.Header.ColorMode switch
+                        PngColorType c = (GrayMode == true) ? PngColorType.Grayscale:psd.Header.ColorMode switch
                         {
                             ColorMode.Grayscale => PngColorType.Grayscale,
                             _ => PngColorType.Rgb
