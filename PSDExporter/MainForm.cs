@@ -17,7 +17,7 @@ namespace PSDExporter
         private void ResetStatusBar()
         {
             toolStripStatusLabel1.ForeColor = Color.Black;
-            toolStripStatusLabel1.Text = "¾ÍĞ÷¡£";
+            toolStripStatusLabel1.Text = "å°±ç»ªã€‚";
         }
 
         private void ReadSettings()
@@ -62,16 +62,16 @@ namespace PSDExporter
             if(exportPath.Text.Length == 0 || !Path.Exists(exportPath.Text))
             {
                 toolStripStatusLabel1.ForeColor = Color.DarkRed;
-                toolStripStatusLabel1.Text = "µ¼³öÂ·¾¶ÎŞĞ§£¡";
-                //MessageBox.Show(, "µ¼³ö");
+                toolStripStatusLabel1.Text = "å¯¼å‡ºè·¯å¾„æ— æ•ˆï¼";
+                //MessageBox.Show(, "å¯¼å‡º");
                 return false;
             }
 
             if(filesList.Items.Count == 0)
             {
                 toolStripStatusLabel1.ForeColor = Color.DarkRed;
-                toolStripStatusLabel1.Text = "´ıµ¼³öÁĞ±íÎª¿Õ£¡";
-                //MessageBox.Show(, "µ¼³ö");
+                toolStripStatusLabel1.Text = "å¾…å¯¼å‡ºåˆ—è¡¨ä¸ºç©ºï¼";
+                //MessageBox.Show(, "å¯¼å‡º");
                 return false;
             }
 
@@ -108,6 +108,7 @@ namespace PSDExporter
                 modalForm.ArtistStr = artistTextBox.Text;
                 modalForm.DescriptionStr = descriptionTextBox.Text;
                 modalForm.ColorProfile = comboBox1.SelectedIndex;
+                modalForm.GrayMode = checkBox2.Checked;
 
                 foreach (var i in filesList.Items)
                 {
@@ -123,22 +124,22 @@ namespace PSDExporter
                     if (result == DialogResult.Cancel)
                     {
                         toolStripStatusLabel1.ForeColor = Color.OrangeRed;
-                        toolStripStatusLabel1.Text = "²Ù×÷±»È¡Ïû¡£";
-                        //MessageBox.Show("", "µ¼³ö", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        toolStripStatusLabel1.Text = "æ“ä½œè¢«å–æ¶ˆã€‚";
+                        //MessageBox.Show("", "å¯¼å‡º", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     else if (result == DialogResult.OK)
                     {
                         toolStripStatusLabel1.ForeColor = Color.DarkGreen;
-                        toolStripStatusLabel1.Text = "µ¼³öÍê³É¡£";
-                        //MessageBox.Show("µ¼³öÍê³É¡£", "µ¼³ö", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        toolStripStatusLabel1.Text = "å¯¼å‡ºå®Œæˆã€‚";
+                        //MessageBox.Show("å¯¼å‡ºå®Œæˆã€‚", "å¯¼å‡º", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch(Exception ex)
                 {
                     toolStripStatusLabel1.ForeColor = Color.DarkRed;
-                    toolStripStatusLabel1.Text = $"µ¼³öÊ±³öÏÖ´íÎó£º\n{ex.Message}";
-                    //MessageBox.Show(, "µ¼³ö", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    toolStripStatusLabel1.Text = $"å¯¼å‡ºæ—¶å‡ºç°é”™è¯¯ï¼š\n{ex.Message}";
+                    //MessageBox.Show(, "å¯¼å‡º", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
