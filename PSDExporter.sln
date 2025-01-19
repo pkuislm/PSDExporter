@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSDExporter", "PSDExporter\PSDExporter.csproj", "{8D2C31F3-B699-4395-BC2F-B520E93A1458}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PsdParser", "PsdParser\PsdParser.csproj", "{3F1D649C-72D0-4016-BBED-66A619350E2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D2C31F3-B699-4395-BC2F-B520E93A1458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2C31F3-B699-4395-BC2F-B520E93A1458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2C31F3-B699-4395-BC2F-B520E93A1458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2C31F3-B699-4395-BC2F-B520E93A1458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F1D649C-72D0-4016-BBED-66A619350E2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F1D649C-72D0-4016-BBED-66A619350E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F1D649C-72D0-4016-BBED-66A619350E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F1D649C-72D0-4016-BBED-66A619350E2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {760FBCFE-AF8B-409F-A089-64975E8054C7}
+	EndGlobalSection
+EndGlobal
