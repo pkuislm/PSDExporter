@@ -52,6 +52,7 @@
             flowLayoutPanel3 = new FlowLayoutPanel();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
+            checkBox2 = new CheckBox();
             exportPath = new TextBox();
             button4 = new Button();
             groupBox6 = new GroupBox();
@@ -63,6 +64,8 @@
             textBox2 = new TextBox();
             label14 = new Label();
             label13 = new Label();
+            groupBox7 = new GroupBox();
+            tableLayoutPanel11 = new TableLayoutPanel();
             groupBox2 = new GroupBox();
             tableLayoutPanel5 = new TableLayoutPanel();
             label6 = new Label();
@@ -90,9 +93,6 @@
             label11 = new Label();
             groupBox4 = new GroupBox();
             label12 = new Label();
-            groupBox7 = new GroupBox();
-            checkBox2 = new CheckBox();
-            tableLayoutPanel11 = new TableLayoutPanel();
             tableLayoutPanel1.SuspendLayout();
             groupBox5.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -108,6 +108,7 @@
             tableLayoutPanel4.SuspendLayout();
             flowLayoutPanel3.SuspendLayout();
             groupBox6.SuspendLayout();
+            groupBox7.SuspendLayout();
             groupBox2.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -118,7 +119,6 @@
             tableLayoutPanel10.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
-            groupBox7.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -130,7 +130,7 @@
             button1.Name = "button1";
             button1.Size = new Size(422, 27);
             button1.TabIndex = 0;
-            button1.Text = "开始导出";
+            button1.Text = "开导";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -479,6 +479,16 @@
             radioButton2.UseVisualStyleBackColor = true;
             radioButton2.CheckedChanged += RadioButtonCheckedChanged;
             // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(114, 3);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(99, 21);
+            checkBox2.TabIndex = 2;
+            checkBox2.Text = "强制灰度输出";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
             // exportPath
             // 
             exportPath.AllowDrop = true;
@@ -586,6 +596,30 @@
             label13.Size = new Size(44, 17);
             label13.TabIndex = 1;
             label13.Text = "前缀为";
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(tableLayoutPanel11);
+            groupBox7.Dock = DockStyle.Fill;
+            groupBox7.Location = new Point(3, 267);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(422, 221);
+            groupBox7.TabIndex = 4;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "图片处理";
+            // 
+            // tableLayoutPanel11
+            // 
+            tableLayoutPanel11.ColumnCount = 1;
+            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel11.Dock = DockStyle.Fill;
+            tableLayoutPanel11.Location = new Point(3, 19);
+            tableLayoutPanel11.Name = "tableLayoutPanel11";
+            tableLayoutPanel11.RowCount = 2;
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel11.Size = new Size(416, 199);
+            tableLayoutPanel11.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -890,40 +924,6 @@
             label12.TabIndex = 0;
             label12.Text = "label12";
             // 
-            // groupBox7
-            // 
-            groupBox7.Controls.Add(tableLayoutPanel11);
-            groupBox7.Dock = DockStyle.Fill;
-            groupBox7.Location = new Point(3, 267);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(422, 221);
-            groupBox7.TabIndex = 4;
-            groupBox7.TabStop = false;
-            groupBox7.Text = "图片处理";
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(114, 3);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(99, 21);
-            checkBox2.TabIndex = 2;
-            checkBox2.Text = "强制灰度输出";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel11
-            // 
-            tableLayoutPanel11.ColumnCount = 1;
-            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel11.Dock = DockStyle.Fill;
-            tableLayoutPanel11.Location = new Point(3, 19);
-            tableLayoutPanel11.Name = "tableLayoutPanel11";
-            tableLayoutPanel11.RowCount = 2;
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel11.Size = new Size(416, 199);
-            tableLayoutPanel11.TabIndex = 0;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -964,6 +964,7 @@
             flowLayoutPanel3.PerformLayout();
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
+            groupBox7.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             tableLayoutPanel5.ResumeLayout(false);
@@ -983,7 +984,6 @@
             groupBox3.PerformLayout();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
-            groupBox7.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }

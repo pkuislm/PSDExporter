@@ -9,6 +9,7 @@ using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.Metadata.Profiles.Exif;
 using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing;
 using Image = SixLabors.ImageSharp.Image;
 
 namespace PSDExporter
@@ -133,46 +134,47 @@ namespace PSDExporter
                 using var psd = new PsdFile(file);
                 var fileName = Path.GetFileNameWithoutExtension(file);
 
-                var imageData = psd.ImageDataSection.GetData(psd.Header);
                 Image img = null;
+                
+                byte[]? GetImageWithChCount(int channelCount)
+                {
+                    var channelImageData = psd.ImageDataSection.GetData(psd.Header);
+                    if (psd.Header.Channels < channelCount)
+                    {
+                        throw new ArgumentOutOfRangeException("Insufficient channel count.");
+                    }
+                    //Discard pixeldata if necessary
+                    else if (psd.Header.Channels != channelCount)
+                    {
+                        var pixelCount = psd.Header.Width * psd.Header.Height;
+
+                        var newPixelData = new byte[pixelCount * channelCount];
+                        var oldPixelIdx = 0;
+                        var newPixelIdx = 0;
+                        while(oldPixelIdx < pixelCount * psd.Header.Channels)
+                        {
+                            Buffer.BlockCopy(channelImageData, oldPixelIdx, newPixelData, newPixelIdx, channelCount);
+                            oldPixelIdx += psd.Header.Channels;
+                            newPixelIdx += channelCount;
+                        }
+                        return newPixelData;
+                    }
+                    else
+                    {
+                        return channelImageData;
+                    }
+                }
+
                 switch (psd.Header.ColorMode)
                 {
                     case ColorMode.RGB:
                     {
-                        switch (psd.Header.Channels)
-                        {
-                            case 3:
-                            {
-                                img = Image.LoadPixelData<Rgb24>(imageData, psd.Header.Width, psd.Header.Height);
-                                break;
-                            }
-                            case 4:
-                            {
-                                img = Image.LoadPixelData<Rgba32>(imageData, psd.Header.Width, psd.Header.Height);
-                                break;
-                            }
-                            default:
-                                throw new NotSupportedException();
-                        }
+                        img = Image.LoadPixelData<Rgb24>(GetImageWithChCount(3), psd.Header.Width, psd.Header.Height);
                         break;
                     }
                     case ColorMode.Grayscale:
                     {
-                        switch (psd.Header.Channels)
-                        {
-                            case 1:
-                            {
-                                img = Image.LoadPixelData<L8>(imageData, psd.Header.Width, psd.Header.Height);
-                                break;
-                            }
-                            case 2:
-                            {
-                                img = Image.LoadPixelData<La16>(imageData, psd.Header.Width, psd.Header.Height);
-                                break;
-                            }
-                            default:
-                                throw new NotSupportedException();
-                        }
+                        img = Image.LoadPixelData<L8>(GetImageWithChCount(1), psd.Header.Width, psd.Header.Height);
                         break;
                     }
                 }
