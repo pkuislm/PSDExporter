@@ -30,32 +30,52 @@
         {
             button1 = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
-            groupBox5 = new GroupBox();
+            fileInputBox = new GroupBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
             deleteSelItemInListButton = new Button();
             clearFileListButton = new Button();
             filesList = new ListBox();
-            groupBox1 = new GroupBox();
-            tableLayoutPanel6 = new TableLayoutPanel();
-            pngExportSettingsPanel = new GroupBox();
-            tableLayoutPanel7 = new TableLayoutPanel();
-            label4 = new Label();
-            pngCompressLevel = new NumericUpDown();
-            jpgExportSettingsPanel = new GroupBox();
-            tableLayoutPanel8 = new TableLayoutPanel();
-            jpgExportQuality = new NumericUpDown();
-            label5 = new Label();
-            tableLayoutPanel4 = new TableLayoutPanel();
+            exportSettingBox = new GroupBox();
+            flowLayout = new FlowLayoutPanel();
+            exportDetailsPanel = new TableLayoutPanel();
             label2 = new Label();
             label3 = new Label();
             flowLayoutPanel3 = new FlowLayoutPanel();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
+            radioButton3 = new RadioButton();
             checkBox2 = new CheckBox();
             exportPath = new TextBox();
             button4 = new Button();
-            groupBox6 = new GroupBox();
+            exportSettingsPages = new TabControl();
+            jpgSettingsTab = new TabPage();
+            jpgExportSettingsPanel = new GroupBox();
+            tableLayoutPanel8 = new TableLayoutPanel();
+            jpgExportQuality = new NumericUpDown();
+            label5 = new Label();
+            pngSettingsTab = new TabPage();
+            pngExportSettingsPanel = new GroupBox();
+            tableLayoutPanel7 = new TableLayoutPanel();
+            label4 = new Label();
+            pngCompressLevel = new NumericUpDown();
+            webPSettingsTab = new TabPage();
+            webPExportSettingsPanel = new GroupBox();
+            tableLayoutPanel12 = new TableLayoutPanel();
+            label17 = new Label();
+            label18 = new Label();
+            label19 = new Label();
+            comboBox2 = new ComboBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            radioButton5 = new RadioButton();
+            radioButton4 = new RadioButton();
+            checkBox3 = new CheckBox();
+            numericUpDown1 = new NumericUpDown();
+            label20 = new Label();
+            nearLosslessQuality = new NumericUpDown();
+            numericUpDown3 = new NumericUpDown();
+            label21 = new Label();
+            exportFileNameSettingsPanel = new GroupBox();
             checkBox1 = new CheckBox();
             textBox4 = new TextBox();
             label16 = new Label();
@@ -64,9 +84,7 @@
             textBox2 = new TextBox();
             label14 = new Label();
             label13 = new Label();
-            groupBox7 = new GroupBox();
-            tableLayoutPanel11 = new TableLayoutPanel();
-            groupBox2 = new GroupBox();
+            metadataBox = new GroupBox();
             tableLayoutPanel5 = new TableLayoutPanel();
             label6 = new Label();
             label7 = new Label();
@@ -82,7 +100,7 @@
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
+            PSDExportPage = new TabPage();
             tabPage2 = new TabPage();
             tableLayoutPanel9 = new TableLayoutPanel();
             tableLayoutPanel10 = new TableLayoutPanel();
@@ -94,26 +112,35 @@
             groupBox4 = new GroupBox();
             label12 = new Label();
             tableLayoutPanel1.SuspendLayout();
-            groupBox5.SuspendLayout();
+            fileInputBox.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
-            groupBox1.SuspendLayout();
-            tableLayoutPanel6.SuspendLayout();
-            pngExportSettingsPanel.SuspendLayout();
-            tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pngCompressLevel).BeginInit();
+            exportSettingBox.SuspendLayout();
+            flowLayout.SuspendLayout();
+            exportDetailsPanel.SuspendLayout();
+            flowLayoutPanel3.SuspendLayout();
+            exportSettingsPages.SuspendLayout();
+            jpgSettingsTab.SuspendLayout();
             jpgExportSettingsPanel.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)jpgExportQuality).BeginInit();
-            tableLayoutPanel4.SuspendLayout();
-            flowLayoutPanel3.SuspendLayout();
-            groupBox6.SuspendLayout();
-            groupBox7.SuspendLayout();
-            groupBox2.SuspendLayout();
+            pngSettingsTab.SuspendLayout();
+            pngExportSettingsPanel.SuspendLayout();
+            tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pngCompressLevel).BeginInit();
+            webPSettingsTab.SuspendLayout();
+            webPExportSettingsPanel.SuspendLayout();
+            tableLayoutPanel12.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nearLosslessQuality).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
+            exportFileNameSettingsPanel.SuspendLayout();
+            metadataBox.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             statusStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
+            PSDExportPage.SuspendLayout();
             tabPage2.SuspendLayout();
             tableLayoutPanel9.SuspendLayout();
             tableLayoutPanel10.SuspendLayout();
@@ -147,9 +174,9 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel1.Controls.Add(groupBox5, 0, 0);
-            tableLayoutPanel1.Controls.Add(groupBox1, 0, 1);
-            tableLayoutPanel1.Controls.Add(groupBox2, 4, 1);
+            tableLayoutPanel1.Controls.Add(fileInputBox, 0, 0);
+            tableLayoutPanel1.Controls.Add(exportSettingBox, 0, 1);
+            tableLayoutPanel1.Controls.Add(metadataBox, 4, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(3, 3);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -159,19 +186,19 @@
             tableLayoutPanel1.Size = new Size(880, 753);
             tableLayoutPanel1.TabIndex = 1;
             // 
-            // groupBox5
+            // fileInputBox
             // 
-            groupBox5.AutoSize = true;
-            groupBox5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel1.SetColumnSpan(groupBox5, 8);
-            groupBox5.Controls.Add(tableLayoutPanel2);
-            groupBox5.Dock = DockStyle.Fill;
-            groupBox5.Location = new Point(3, 3);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(874, 229);
-            groupBox5.TabIndex = 5;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "拖拽包含.psd的文件夹或者.psd文件至下方列表中";
+            fileInputBox.AutoSize = true;
+            fileInputBox.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel1.SetColumnSpan(fileInputBox, 8);
+            fileInputBox.Controls.Add(tableLayoutPanel2);
+            fileInputBox.Dock = DockStyle.Fill;
+            fileInputBox.Location = new Point(3, 3);
+            fileInputBox.Name = "fileInputBox";
+            fileInputBox.Size = new Size(874, 229);
+            fileInputBox.TabIndex = 5;
+            fileInputBox.TabStop = false;
+            fileInputBox.Text = "拖拽包含.psd的文件夹或者.psd文件至下方列表中";
             // 
             // tableLayoutPanel2
             // 
@@ -254,168 +281,55 @@
             filesList.DragDrop += FilesListDragDrop;
             filesList.DragEnter += FilesListDragEnter;
             // 
-            // groupBox1
+            // exportSettingBox
             // 
-            groupBox1.AutoSize = true;
-            groupBox1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel1.SetColumnSpan(groupBox1, 4);
-            groupBox1.Controls.Add(tableLayoutPanel6);
-            groupBox1.Dock = DockStyle.Fill;
-            groupBox1.Location = new Point(3, 238);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(434, 513);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "导出设定";
+            exportSettingBox.AutoSize = true;
+            exportSettingBox.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel1.SetColumnSpan(exportSettingBox, 4);
+            exportSettingBox.Controls.Add(flowLayout);
+            exportSettingBox.Dock = DockStyle.Fill;
+            exportSettingBox.Location = new Point(3, 238);
+            exportSettingBox.Name = "exportSettingBox";
+            exportSettingBox.Size = new Size(434, 513);
+            exportSettingBox.TabIndex = 3;
+            exportSettingBox.TabStop = false;
+            exportSettingBox.Text = "导出设定";
             // 
-            // tableLayoutPanel6
+            // flowLayout
             // 
-            tableLayoutPanel6.AutoSize = true;
-            tableLayoutPanel6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel6.ColumnCount = 1;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel6.Controls.Add(pngExportSettingsPanel, 0, 2);
-            tableLayoutPanel6.Controls.Add(jpgExportSettingsPanel, 0, 1);
-            tableLayoutPanel6.Controls.Add(tableLayoutPanel4, 0, 0);
-            tableLayoutPanel6.Controls.Add(groupBox6, 0, 3);
-            tableLayoutPanel6.Controls.Add(groupBox7, 0, 4);
-            tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(3, 19);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 5;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle());
-            tableLayoutPanel6.RowStyles.Add(new RowStyle());
-            tableLayoutPanel6.RowStyles.Add(new RowStyle());
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 82F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 82F));
-            tableLayoutPanel6.Size = new Size(428, 491);
-            tableLayoutPanel6.TabIndex = 1;
+            flowLayout.AutoSize = true;
+            flowLayout.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayout.Controls.Add(exportDetailsPanel);
+            flowLayout.Controls.Add(exportSettingsPages);
+            flowLayout.Controls.Add(exportFileNameSettingsPanel);
+            flowLayout.Dock = DockStyle.Left;
+            flowLayout.FlowDirection = FlowDirection.TopDown;
+            flowLayout.Location = new Point(3, 19);
+            flowLayout.Name = "flowLayout";
+            flowLayout.Size = new Size(429, 491);
+            flowLayout.TabIndex = 2;
             // 
-            // pngExportSettingsPanel
+            // exportDetailsPanel
             // 
-            pngExportSettingsPanel.AutoSize = true;
-            pngExportSettingsPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            pngExportSettingsPanel.Controls.Add(tableLayoutPanel7);
-            pngExportSettingsPanel.Dock = DockStyle.Top;
-            pngExportSettingsPanel.Enabled = false;
-            pngExportSettingsPanel.Location = new Point(3, 128);
-            pngExportSettingsPanel.Name = "pngExportSettingsPanel";
-            pngExportSettingsPanel.Size = new Size(422, 51);
-            pngExportSettingsPanel.TabIndex = 2;
-            pngExportSettingsPanel.TabStop = false;
-            pngExportSettingsPanel.Text = "PNG 导出设定";
-            // 
-            // tableLayoutPanel7
-            // 
-            tableLayoutPanel7.AutoSize = true;
-            tableLayoutPanel7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel7.ColumnCount = 2;
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel7.Controls.Add(label4, 0, 0);
-            tableLayoutPanel7.Controls.Add(pngCompressLevel, 1, 0);
-            tableLayoutPanel7.Dock = DockStyle.Top;
-            tableLayoutPanel7.Location = new Point(3, 19);
-            tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 1;
-            tableLayoutPanel7.RowStyles.Add(new RowStyle());
-            tableLayoutPanel7.Size = new Size(416, 29);
-            tableLayoutPanel7.TabIndex = 1;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Left;
-            label4.AutoSize = true;
-            label4.Location = new Point(3, 6);
-            label4.Margin = new Padding(3);
-            label4.Name = "label4";
-            label4.Size = new Size(229, 17);
-            label4.TabIndex = 0;
-            label4.Text = "PNG 压缩等级(0=最快速度, 9=最小体积)";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // pngCompressLevel
-            // 
-            pngCompressLevel.Anchor = AnchorStyles.Right;
-            pngCompressLevel.Location = new Point(293, 3);
-            pngCompressLevel.Maximum = new decimal(new int[] { 9, 0, 0, 0 });
-            pngCompressLevel.Name = "pngCompressLevel";
-            pngCompressLevel.Size = new Size(120, 23);
-            pngCompressLevel.TabIndex = 1;
-            pngCompressLevel.Value = new decimal(new int[] { 9, 0, 0, 0 });
-            // 
-            // jpgExportSettingsPanel
-            // 
-            jpgExportSettingsPanel.AutoSize = true;
-            jpgExportSettingsPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            jpgExportSettingsPanel.Controls.Add(tableLayoutPanel8);
-            jpgExportSettingsPanel.Dock = DockStyle.Top;
-            jpgExportSettingsPanel.Location = new Point(3, 71);
-            jpgExportSettingsPanel.Name = "jpgExportSettingsPanel";
-            jpgExportSettingsPanel.Size = new Size(422, 51);
-            jpgExportSettingsPanel.TabIndex = 1;
-            jpgExportSettingsPanel.TabStop = false;
-            jpgExportSettingsPanel.Text = "JPG 导出设定";
-            // 
-            // tableLayoutPanel8
-            // 
-            tableLayoutPanel8.AutoSize = true;
-            tableLayoutPanel8.ColumnCount = 2;
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel8.Controls.Add(jpgExportQuality, 1, 0);
-            tableLayoutPanel8.Controls.Add(label5, 0, 0);
-            tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(3, 19);
-            tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 1;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel8.Size = new Size(416, 29);
-            tableLayoutPanel8.TabIndex = 0;
-            // 
-            // jpgExportQuality
-            // 
-            jpgExportQuality.Anchor = AnchorStyles.Right;
-            jpgExportQuality.Location = new Point(293, 3);
-            jpgExportQuality.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            jpgExportQuality.Name = "jpgExportQuality";
-            jpgExportQuality.Size = new Size(120, 23);
-            jpgExportQuality.TabIndex = 1;
-            jpgExportQuality.Value = new decimal(new int[] { 100, 0, 0, 0 });
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Left;
-            label5.AutoSize = true;
-            label5.Location = new Point(3, 6);
-            label5.Margin = new Padding(3);
-            label5.Name = "label5";
-            label5.Size = new Size(238, 17);
-            label5.TabIndex = 0;
-            label5.Text = "JPG 质量设定(0=最小体积, 100=最好质量)";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel4
-            // 
-            tableLayoutPanel4.AutoSize = true;
-            tableLayoutPanel4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel4.ColumnCount = 3;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel4.Controls.Add(label2, 0, 0);
-            tableLayoutPanel4.Controls.Add(label3, 0, 1);
-            tableLayoutPanel4.Controls.Add(flowLayoutPanel3, 1, 0);
-            tableLayoutPanel4.Controls.Add(exportPath, 1, 1);
-            tableLayoutPanel4.Controls.Add(button4, 2, 1);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(3, 3);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 2;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle());
-            tableLayoutPanel4.RowStyles.Add(new RowStyle());
-            tableLayoutPanel4.Size = new Size(422, 62);
-            tableLayoutPanel4.TabIndex = 0;
+            exportDetailsPanel.AutoSize = true;
+            exportDetailsPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            exportDetailsPanel.ColumnCount = 3;
+            exportDetailsPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            exportDetailsPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+            exportDetailsPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            exportDetailsPanel.Controls.Add(label2, 0, 0);
+            exportDetailsPanel.Controls.Add(label3, 0, 1);
+            exportDetailsPanel.Controls.Add(flowLayoutPanel3, 1, 0);
+            exportDetailsPanel.Controls.Add(exportPath, 1, 1);
+            exportDetailsPanel.Controls.Add(button4, 2, 1);
+            exportDetailsPanel.Dock = DockStyle.Fill;
+            exportDetailsPanel.Location = new Point(3, 3);
+            exportDetailsPanel.Name = "exportDetailsPanel";
+            exportDetailsPanel.RowCount = 2;
+            exportDetailsPanel.RowStyles.Add(new RowStyle());
+            exportDetailsPanel.RowStyles.Add(new RowStyle());
+            exportDetailsPanel.Size = new Size(423, 62);
+            exportDetailsPanel.TabIndex = 1;
             // 
             // label2
             // 
@@ -445,14 +359,15 @@
             // 
             flowLayoutPanel3.AutoSize = true;
             flowLayoutPanel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel4.SetColumnSpan(flowLayoutPanel3, 2);
+            exportDetailsPanel.SetColumnSpan(flowLayoutPanel3, 2);
             flowLayoutPanel3.Controls.Add(radioButton1);
             flowLayoutPanel3.Controls.Add(radioButton2);
+            flowLayoutPanel3.Controls.Add(radioButton3);
             flowLayoutPanel3.Controls.Add(checkBox2);
             flowLayoutPanel3.Dock = DockStyle.Fill;
             flowLayoutPanel3.Location = new Point(87, 3);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(332, 27);
+            flowLayoutPanel3.Size = new Size(333, 27);
             flowLayoutPanel3.TabIndex = 3;
             // 
             // radioButton1
@@ -466,7 +381,7 @@
             radioButton1.TabStop = true;
             radioButton1.Text = "JPG";
             radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += RadioButtonCheckedChanged;
+            radioButton1.Click += ExportFormatChanged;
             // 
             // radioButton2
             // 
@@ -477,12 +392,24 @@
             radioButton2.TabIndex = 1;
             radioButton2.Text = "PNG";
             radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.CheckedChanged += RadioButtonCheckedChanged;
+            radioButton2.Click += ExportFormatChanged;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(114, 3);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(57, 21);
+            radioButton3.TabIndex = 3;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "webP";
+            radioButton3.UseVisualStyleBackColor = true;
+            radioButton3.Click += ExportFormatChanged;
             // 
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(114, 3);
+            checkBox2.Location = new Point(177, 3);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(99, 21);
             checkBox2.TabIndex = 2;
@@ -509,26 +436,372 @@
             button4.TabIndex = 5;
             button4.Text = "浏览";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
-            // groupBox6
+            // exportSettingsPages
             // 
-            groupBox6.AutoSize = true;
-            groupBox6.Controls.Add(checkBox1);
-            groupBox6.Controls.Add(textBox4);
-            groupBox6.Controls.Add(label16);
-            groupBox6.Controls.Add(textBox3);
-            groupBox6.Controls.Add(label15);
-            groupBox6.Controls.Add(textBox2);
-            groupBox6.Controls.Add(label14);
-            groupBox6.Controls.Add(label13);
-            groupBox6.Dock = DockStyle.Fill;
-            groupBox6.Location = new Point(3, 185);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(422, 76);
-            groupBox6.TabIndex = 3;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "输出文件名格式";
+            exportSettingsPages.Appearance = TabAppearance.Buttons;
+            exportSettingsPages.Controls.Add(jpgSettingsTab);
+            exportSettingsPages.Controls.Add(pngSettingsTab);
+            exportSettingsPages.Controls.Add(webPSettingsTab);
+            exportSettingsPages.ItemSize = new Size(0, 1);
+            exportSettingsPages.Location = new Point(0, 68);
+            exportSettingsPages.Margin = new Padding(0);
+            exportSettingsPages.Name = "exportSettingsPages";
+            exportSettingsPages.Padding = new Point(0, 0);
+            exportSettingsPages.SelectedIndex = 0;
+            exportSettingsPages.Size = new Size(428, 185);
+            exportSettingsPages.SizeMode = TabSizeMode.Fixed;
+            exportSettingsPages.TabIndex = 9;
+            // 
+            // jpgSettingsTab
+            // 
+            jpgSettingsTab.BackColor = SystemColors.ControlLightLight;
+            jpgSettingsTab.Controls.Add(jpgExportSettingsPanel);
+            jpgSettingsTab.Location = new Point(4, 5);
+            jpgSettingsTab.Name = "jpgSettingsTab";
+            jpgSettingsTab.Padding = new Padding(3);
+            jpgSettingsTab.Size = new Size(420, 176);
+            jpgSettingsTab.TabIndex = 0;
+            // 
+            // jpgExportSettingsPanel
+            // 
+            jpgExportSettingsPanel.AutoSize = true;
+            jpgExportSettingsPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            jpgExportSettingsPanel.BackColor = SystemColors.ControlLightLight;
+            jpgExportSettingsPanel.Controls.Add(tableLayoutPanel8);
+            jpgExportSettingsPanel.Dock = DockStyle.Top;
+            jpgExportSettingsPanel.Location = new Point(3, 3);
+            jpgExportSettingsPanel.Name = "jpgExportSettingsPanel";
+            jpgExportSettingsPanel.Size = new Size(414, 51);
+            jpgExportSettingsPanel.TabIndex = 2;
+            jpgExportSettingsPanel.TabStop = false;
+            jpgExportSettingsPanel.Text = "JPG 导出设定";
+            // 
+            // tableLayoutPanel8
+            // 
+            tableLayoutPanel8.AutoSize = true;
+            tableLayoutPanel8.ColumnCount = 2;
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel8.Controls.Add(jpgExportQuality, 1, 0);
+            tableLayoutPanel8.Controls.Add(label5, 0, 0);
+            tableLayoutPanel8.Dock = DockStyle.Fill;
+            tableLayoutPanel8.Location = new Point(3, 19);
+            tableLayoutPanel8.Name = "tableLayoutPanel8";
+            tableLayoutPanel8.RowCount = 1;
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel8.Size = new Size(408, 29);
+            tableLayoutPanel8.TabIndex = 0;
+            // 
+            // jpgExportQuality
+            // 
+            jpgExportQuality.Anchor = AnchorStyles.Right;
+            jpgExportQuality.Location = new Point(285, 3);
+            jpgExportQuality.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            jpgExportQuality.Name = "jpgExportQuality";
+            jpgExportQuality.Size = new Size(120, 23);
+            jpgExportQuality.TabIndex = 1;
+            jpgExportQuality.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Left;
+            label5.AutoSize = true;
+            label5.Location = new Point(3, 6);
+            label5.Margin = new Padding(3);
+            label5.Name = "label5";
+            label5.Size = new Size(238, 17);
+            label5.TabIndex = 0;
+            label5.Text = "JPG 质量设定(0=最小体积, 100=最好质量)";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pngSettingsTab
+            // 
+            pngSettingsTab.BackColor = SystemColors.ControlLightLight;
+            pngSettingsTab.Controls.Add(pngExportSettingsPanel);
+            pngSettingsTab.Location = new Point(4, 5);
+            pngSettingsTab.Name = "pngSettingsTab";
+            pngSettingsTab.Padding = new Padding(3);
+            pngSettingsTab.Size = new Size(420, 176);
+            pngSettingsTab.TabIndex = 1;
+            // 
+            // pngExportSettingsPanel
+            // 
+            pngExportSettingsPanel.AutoSize = true;
+            pngExportSettingsPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            pngExportSettingsPanel.Controls.Add(tableLayoutPanel7);
+            pngExportSettingsPanel.Dock = DockStyle.Top;
+            pngExportSettingsPanel.Location = new Point(3, 3);
+            pngExportSettingsPanel.Name = "pngExportSettingsPanel";
+            pngExportSettingsPanel.Size = new Size(414, 51);
+            pngExportSettingsPanel.TabIndex = 3;
+            pngExportSettingsPanel.TabStop = false;
+            pngExportSettingsPanel.Text = "PNG 导出设定";
+            // 
+            // tableLayoutPanel7
+            // 
+            tableLayoutPanel7.AutoSize = true;
+            tableLayoutPanel7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel7.ColumnCount = 2;
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel7.Controls.Add(label4, 0, 0);
+            tableLayoutPanel7.Controls.Add(pngCompressLevel, 1, 0);
+            tableLayoutPanel7.Dock = DockStyle.Top;
+            tableLayoutPanel7.Location = new Point(3, 19);
+            tableLayoutPanel7.Name = "tableLayoutPanel7";
+            tableLayoutPanel7.RowCount = 1;
+            tableLayoutPanel7.RowStyles.Add(new RowStyle());
+            tableLayoutPanel7.Size = new Size(408, 29);
+            tableLayoutPanel7.TabIndex = 1;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Left;
+            label4.AutoSize = true;
+            label4.Location = new Point(3, 6);
+            label4.Margin = new Padding(3);
+            label4.Name = "label4";
+            label4.Size = new Size(229, 17);
+            label4.TabIndex = 0;
+            label4.Text = "PNG 压缩等级(0=最快速度, 9=最小体积)";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pngCompressLevel
+            // 
+            pngCompressLevel.Anchor = AnchorStyles.Right;
+            pngCompressLevel.Location = new Point(285, 3);
+            pngCompressLevel.Maximum = new decimal(new int[] { 9, 0, 0, 0 });
+            pngCompressLevel.Name = "pngCompressLevel";
+            pngCompressLevel.Size = new Size(120, 23);
+            pngCompressLevel.TabIndex = 1;
+            pngCompressLevel.Value = new decimal(new int[] { 9, 0, 0, 0 });
+            // 
+            // webPSettingsTab
+            // 
+            webPSettingsTab.BackColor = SystemColors.ControlLightLight;
+            webPSettingsTab.Controls.Add(webPExportSettingsPanel);
+            webPSettingsTab.Location = new Point(4, 5);
+            webPSettingsTab.Name = "webPSettingsTab";
+            webPSettingsTab.Padding = new Padding(3);
+            webPSettingsTab.Size = new Size(420, 176);
+            webPSettingsTab.TabIndex = 2;
+            webPSettingsTab.Text = "tabPage5";
+            // 
+            // webPExportSettingsPanel
+            // 
+            webPExportSettingsPanel.AutoSize = true;
+            webPExportSettingsPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            webPExportSettingsPanel.Controls.Add(tableLayoutPanel12);
+            webPExportSettingsPanel.Dock = DockStyle.Top;
+            webPExportSettingsPanel.ImeMode = ImeMode.NoControl;
+            webPExportSettingsPanel.Location = new Point(3, 3);
+            webPExportSettingsPanel.Name = "webPExportSettingsPanel";
+            webPExportSettingsPanel.Size = new Size(414, 173);
+            webPExportSettingsPanel.TabIndex = 8;
+            webPExportSettingsPanel.TabStop = false;
+            webPExportSettingsPanel.Text = "webP 导出设定";
+            // 
+            // tableLayoutPanel12
+            // 
+            tableLayoutPanel12.AutoSize = true;
+            tableLayoutPanel12.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel12.ColumnCount = 2;
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel12.Controls.Add(label17, 0, 1);
+            tableLayoutPanel12.Controls.Add(label18, 0, 2);
+            tableLayoutPanel12.Controls.Add(label19, 0, 3);
+            tableLayoutPanel12.Controls.Add(comboBox2, 1, 2);
+            tableLayoutPanel12.Controls.Add(flowLayoutPanel1, 1, 0);
+            tableLayoutPanel12.Controls.Add(numericUpDown1, 1, 1);
+            tableLayoutPanel12.Controls.Add(label20, 0, 4);
+            tableLayoutPanel12.Controls.Add(nearLosslessQuality, 1, 3);
+            tableLayoutPanel12.Controls.Add(numericUpDown3, 1, 4);
+            tableLayoutPanel12.Controls.Add(label21, 0, 0);
+            tableLayoutPanel12.Dock = DockStyle.Top;
+            tableLayoutPanel12.Location = new Point(3, 19);
+            tableLayoutPanel12.Name = "tableLayoutPanel12";
+            tableLayoutPanel12.RowCount = 5;
+            tableLayoutPanel12.RowStyles.Add(new RowStyle());
+            tableLayoutPanel12.RowStyles.Add(new RowStyle());
+            tableLayoutPanel12.RowStyles.Add(new RowStyle());
+            tableLayoutPanel12.RowStyles.Add(new RowStyle());
+            tableLayoutPanel12.RowStyles.Add(new RowStyle());
+            tableLayoutPanel12.Size = new Size(408, 151);
+            tableLayoutPanel12.TabIndex = 0;
+            // 
+            // label17
+            // 
+            label17.Anchor = AnchorStyles.Left;
+            label17.AutoSize = true;
+            label17.Location = new Point(3, 39);
+            label17.Margin = new Padding(3);
+            label17.Name = "label17";
+            label17.Size = new Size(92, 17);
+            label17.TabIndex = 3;
+            label17.Text = "EntropyPasses";
+            // 
+            // label18
+            // 
+            label18.Anchor = AnchorStyles.Left;
+            label18.AutoSize = true;
+            label18.Location = new Point(3, 69);
+            label18.Margin = new Padding(3);
+            label18.Name = "label18";
+            label18.Size = new Size(108, 17);
+            label18.TabIndex = 4;
+            label18.Text = "EncodingMethod";
+            // 
+            // label19
+            // 
+            label19.Anchor = AnchorStyles.Left;
+            label19.AutoSize = true;
+            label19.Location = new Point(3, 99);
+            label19.Margin = new Padding(3);
+            label19.Name = "label19";
+            label19.Size = new Size(125, 17);
+            label19.TabIndex = 5;
+            label19.Text = "NearLosslessQuality";
+            // 
+            // comboBox2
+            // 
+            comboBox2.DisplayMember = "Level4(Default)";
+            comboBox2.Dock = DockStyle.Top;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Fastest", "Level1", "Level2", "Level3", "Level4(Default)", "Level5", "BestQuality" });
+            comboBox2.Location = new Point(134, 65);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(271, 25);
+            comboBox2.TabIndex = 6;
+            comboBox2.ValueMember = "Level4(Default)";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoSize = true;
+            flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel1.Controls.Add(radioButton5);
+            flowLayoutPanel1.Controls.Add(radioButton4);
+            flowLayoutPanel1.Controls.Add(checkBox3);
+            flowLayoutPanel1.Dock = DockStyle.Top;
+            flowLayoutPanel1.Location = new Point(134, 3);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(271, 27);
+            flowLayoutPanel1.TabIndex = 7;
+            // 
+            // radioButton5
+            // 
+            radioButton5.Anchor = AnchorStyles.Left;
+            radioButton5.AutoSize = true;
+            radioButton5.Checked = true;
+            radioButton5.Location = new Point(3, 3);
+            radioButton5.Name = "radioButton5";
+            radioButton5.Size = new Size(74, 21);
+            radioButton5.TabIndex = 2;
+            radioButton5.TabStop = true;
+            radioButton5.Text = "Lossless";
+            radioButton5.UseVisualStyleBackColor = true;
+            radioButton5.Click += WebPExportModeChanged;
+            // 
+            // radioButton4
+            // 
+            radioButton4.AutoSize = true;
+            radioButton4.Dock = DockStyle.Fill;
+            radioButton4.Location = new Point(83, 3);
+            radioButton4.Name = "radioButton4";
+            radioButton4.Size = new Size(58, 21);
+            radioButton4.TabIndex = 1;
+            radioButton4.TabStop = true;
+            radioButton4.Text = "Lossy";
+            radioButton4.UseVisualStyleBackColor = true;
+            radioButton4.Click += WebPExportModeChanged;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Enabled = false;
+            checkBox3.Location = new Point(147, 3);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(107, 21);
+            checkBox3.TabIndex = 2;
+            checkBox3.Text = "NearLossLess";
+            checkBox3.UseVisualStyleBackColor = true;
+            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.AutoSize = true;
+            numericUpDown1.Dock = DockStyle.Top;
+            numericUpDown1.Location = new Point(134, 36);
+            numericUpDown1.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(271, 23);
+            numericUpDown1.TabIndex = 8;
+            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Dock = DockStyle.Top;
+            label20.Location = new Point(3, 125);
+            label20.Margin = new Padding(3);
+            label20.Name = "label20";
+            label20.RightToLeft = RightToLeft.No;
+            label20.Size = new Size(125, 17);
+            label20.TabIndex = 9;
+            label20.Text = "Quality";
+            // 
+            // nearLosslessQuality
+            // 
+            nearLosslessQuality.AutoSize = true;
+            nearLosslessQuality.Dock = DockStyle.Top;
+            nearLosslessQuality.Enabled = false;
+            nearLosslessQuality.Location = new Point(134, 96);
+            nearLosslessQuality.Name = "nearLosslessQuality";
+            nearLosslessQuality.Size = new Size(271, 23);
+            nearLosslessQuality.TabIndex = 10;
+            nearLosslessQuality.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            // 
+            // numericUpDown3
+            // 
+            numericUpDown3.AutoSize = true;
+            numericUpDown3.Dock = DockStyle.Top;
+            numericUpDown3.Location = new Point(134, 125);
+            numericUpDown3.Name = "numericUpDown3";
+            numericUpDown3.Size = new Size(271, 23);
+            numericUpDown3.TabIndex = 11;
+            numericUpDown3.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            // 
+            // label21
+            // 
+            label21.Anchor = AnchorStyles.Left;
+            label21.AutoSize = true;
+            label21.Location = new Point(3, 8);
+            label21.Margin = new Padding(3);
+            label21.Name = "label21";
+            label21.Size = new Size(43, 17);
+            label21.TabIndex = 12;
+            label21.Text = "Mode";
+            // 
+            // exportFileNameSettingsPanel
+            // 
+            exportFileNameSettingsPanel.AutoSize = true;
+            exportFileNameSettingsPanel.Controls.Add(checkBox1);
+            exportFileNameSettingsPanel.Controls.Add(textBox4);
+            exportFileNameSettingsPanel.Controls.Add(label16);
+            exportFileNameSettingsPanel.Controls.Add(textBox3);
+            exportFileNameSettingsPanel.Controls.Add(label15);
+            exportFileNameSettingsPanel.Controls.Add(textBox2);
+            exportFileNameSettingsPanel.Controls.Add(label14);
+            exportFileNameSettingsPanel.Controls.Add(label13);
+            exportFileNameSettingsPanel.Location = new Point(3, 256);
+            exportFileNameSettingsPanel.Name = "exportFileNameSettingsPanel";
+            exportFileNameSettingsPanel.Size = new Size(423, 89);
+            exportFileNameSettingsPanel.TabIndex = 10;
+            exportFileNameSettingsPanel.TabStop = false;
+            exportFileNameSettingsPanel.Text = "输出文件名格式";
             // 
             // checkBox1
             // 
@@ -597,43 +870,19 @@
             label13.TabIndex = 1;
             label13.Text = "前缀为";
             // 
-            // groupBox7
+            // metadataBox
             // 
-            groupBox7.Controls.Add(tableLayoutPanel11);
-            groupBox7.Dock = DockStyle.Fill;
-            groupBox7.Location = new Point(3, 267);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(422, 221);
-            groupBox7.TabIndex = 4;
-            groupBox7.TabStop = false;
-            groupBox7.Text = "图片处理";
-            // 
-            // tableLayoutPanel11
-            // 
-            tableLayoutPanel11.ColumnCount = 1;
-            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel11.Dock = DockStyle.Fill;
-            tableLayoutPanel11.Location = new Point(3, 19);
-            tableLayoutPanel11.Name = "tableLayoutPanel11";
-            tableLayoutPanel11.RowCount = 2;
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel11.Size = new Size(416, 199);
-            tableLayoutPanel11.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            groupBox2.AutoSize = true;
-            groupBox2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel1.SetColumnSpan(groupBox2, 4);
-            groupBox2.Controls.Add(tableLayoutPanel5);
-            groupBox2.Dock = DockStyle.Fill;
-            groupBox2.Location = new Point(443, 238);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(434, 513);
-            groupBox2.TabIndex = 4;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "元数据";
+            metadataBox.AutoSize = true;
+            metadataBox.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel1.SetColumnSpan(metadataBox, 4);
+            metadataBox.Controls.Add(tableLayoutPanel5);
+            metadataBox.Dock = DockStyle.Fill;
+            metadataBox.Location = new Point(443, 238);
+            metadataBox.Name = "metadataBox";
+            metadataBox.Size = new Size(434, 513);
+            metadataBox.TabIndex = 4;
+            metadataBox.TabStop = false;
+            metadataBox.Text = "元数据";
             // 
             // tableLayoutPanel5
             // 
@@ -758,7 +1007,7 @@
             comboBox1.Dock = DockStyle.Left;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Adobe RGB", "sRGB", "DCI-P3", "无" });
+            comboBox1.Items.AddRange(new object[] { "Adobe RGB", "sRGB(sGray)", "DCI-P3", "无" });
             comboBox1.Location = new Point(3, 26);
             comboBox1.Name = "comboBox1";
             comboBox1.RightToLeft = RightToLeft.No;
@@ -783,7 +1032,7 @@
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(PSDExportPage);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
@@ -794,16 +1043,16 @@
             tabControl1.Size = new Size(894, 789);
             tabControl1.TabIndex = 3;
             // 
-            // tabPage1
+            // PSDExportPage
             // 
-            tabPage1.Controls.Add(tableLayoutPanel1);
-            tabPage1.Location = new Point(4, 26);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(886, 759);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "PSD导出";
-            tabPage1.UseVisualStyleBackColor = true;
+            PSDExportPage.Controls.Add(tableLayoutPanel1);
+            PSDExportPage.Location = new Point(4, 26);
+            PSDExportPage.Name = "PSDExportPage";
+            PSDExportPage.Padding = new Padding(3);
+            PSDExportPage.Size = new Size(886, 759);
+            PSDExportPage.TabIndex = 0;
+            PSDExportPage.Text = "PSD导出";
+            PSDExportPage.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -938,42 +1187,57 @@
             Text = "吗喽导导乐";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
+            fileInputBox.ResumeLayout(false);
+            fileInputBox.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel3.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            tableLayoutPanel6.ResumeLayout(false);
-            tableLayoutPanel6.PerformLayout();
-            pngExportSettingsPanel.ResumeLayout(false);
-            pngExportSettingsPanel.PerformLayout();
-            tableLayoutPanel7.ResumeLayout(false);
-            tableLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pngCompressLevel).EndInit();
+            exportSettingBox.ResumeLayout(false);
+            exportSettingBox.PerformLayout();
+            flowLayout.ResumeLayout(false);
+            flowLayout.PerformLayout();
+            exportDetailsPanel.ResumeLayout(false);
+            exportDetailsPanel.PerformLayout();
+            flowLayoutPanel3.ResumeLayout(false);
+            flowLayoutPanel3.PerformLayout();
+            exportSettingsPages.ResumeLayout(false);
+            jpgSettingsTab.ResumeLayout(false);
+            jpgSettingsTab.PerformLayout();
             jpgExportSettingsPanel.ResumeLayout(false);
             jpgExportSettingsPanel.PerformLayout();
             tableLayoutPanel8.ResumeLayout(false);
             tableLayoutPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)jpgExportQuality).EndInit();
-            tableLayoutPanel4.ResumeLayout(false);
-            tableLayoutPanel4.PerformLayout();
-            flowLayoutPanel3.ResumeLayout(false);
-            flowLayoutPanel3.PerformLayout();
-            groupBox6.ResumeLayout(false);
-            groupBox6.PerformLayout();
-            groupBox7.ResumeLayout(false);
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            pngSettingsTab.ResumeLayout(false);
+            pngSettingsTab.PerformLayout();
+            pngExportSettingsPanel.ResumeLayout(false);
+            pngExportSettingsPanel.PerformLayout();
+            tableLayoutPanel7.ResumeLayout(false);
+            tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pngCompressLevel).EndInit();
+            webPSettingsTab.ResumeLayout(false);
+            webPSettingsTab.PerformLayout();
+            webPExportSettingsPanel.ResumeLayout(false);
+            webPExportSettingsPanel.PerformLayout();
+            tableLayoutPanel12.ResumeLayout(false);
+            tableLayoutPanel12.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nearLosslessQuality).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
+            exportFileNameSettingsPanel.ResumeLayout(false);
+            exportFileNameSettingsPanel.PerformLayout();
+            metadataBox.ResumeLayout(false);
+            metadataBox.PerformLayout();
             tableLayoutPanel5.ResumeLayout(false);
             tableLayoutPanel5.PerformLayout();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            PSDExportPage.ResumeLayout(false);
+            PSDExportPage.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tableLayoutPanel9.ResumeLayout(false);
@@ -997,22 +1261,10 @@
         private Button deleteSelItemInListButton;
         private Button clearFileListButton;
         private ListBox filesList;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
-        private TableLayoutPanel tableLayoutPanel4;
-        private Label label2;
-        private Label label3;
-        private FlowLayoutPanel flowLayoutPanel3;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private TextBox exportPath;
-        private Button button4;
+        private GroupBox fileInputBox;
+        private GroupBox exportSettingBox;
         private ComboBox comboBox1;
         private FolderBrowserDialog folderBrowserDialog1;
-        private GroupBox jpgExportSettingsPanel;
-        private GroupBox pngExportSettingsPanel;
-        private Label label5;
-        private Label label4;
         private Label label6;
         private Label label7;
         private RichTextBox copyrightTextBox;
@@ -1022,17 +1274,12 @@
         private RichTextBox artistTextBox;
         private Label label10;
         private RichTextBox descriptionTextBox;
-        private TableLayoutPanel tableLayoutPanel6;
         private TableLayoutPanel tableLayoutPanel5;
-        private GroupBox groupBox5;
-        private NumericUpDown jpgExportQuality;
+        private GroupBox metadataBox;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
-        private TableLayoutPanel tableLayoutPanel7;
-        private NumericUpDown pngCompressLevel;
-        private TableLayoutPanel tableLayoutPanel8;
         private TabControl tabControl1;
-        private TabPage tabPage1;
+        private TabPage PSDExportPage;
         private TabPage tabPage2;
         private TableLayoutPanel tableLayoutPanel9;
         private GroupBox groupBox3;
@@ -1043,17 +1290,52 @@
         private Label label1;
         private TextBox textBox1;
         private Button button2;
-        private GroupBox groupBox6;
-        private TextBox textBox2;
-        private Label label14;
-        private Label label13;
+        private GroupBox exportFileNameSettingsPanel;
         private CheckBox checkBox1;
         private TextBox textBox4;
         private Label label16;
         private TextBox textBox3;
         private Label label15;
-        private GroupBox groupBox7;
+        private TextBox textBox2;
+        private Label label14;
+        private Label label13;
+        private FlowLayoutPanel flowLayout;
+        private TableLayoutPanel exportDetailsPanel;
+        private Label label2;
+        private Label label3;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton3;
         private CheckBox checkBox2;
-        private TableLayoutPanel tableLayoutPanel11;
+        private TextBox exportPath;
+        private Button button4;
+        private TabControl exportSettingsPages;
+        private TabPage jpgSettingsTab;
+        private GroupBox jpgExportSettingsPanel;
+        private TableLayoutPanel tableLayoutPanel8;
+        private NumericUpDown jpgExportQuality;
+        private Label label5;
+        private TabPage pngSettingsTab;
+        private GroupBox pngExportSettingsPanel;
+        private TableLayoutPanel tableLayoutPanel7;
+        private Label label4;
+        private NumericUpDown pngCompressLevel;
+        private TabPage webPSettingsTab;
+        private GroupBox webPExportSettingsPanel;
+        private TableLayoutPanel tableLayoutPanel12;
+        private RadioButton radioButton5;
+        private Label label17;
+        private Label label18;
+        private Label label19;
+        private ComboBox comboBox2;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private RadioButton radioButton4;
+        private CheckBox checkBox3;
+        private NumericUpDown numericUpDown1;
+        private Label label20;
+        private NumericUpDown nearLosslessQuality;
+        private NumericUpDown numericUpDown3;
+        private Label label21;
     }
 }
